@@ -1,0 +1,348 @@
+* Testing reading list
+
+By no means exhaustive.
+
+** Books
+
+- Test-Driven Development by example ([[https://www.amazon.com/review/R3963Q0PGLBE18/ref%3Dcm_cr_rdp_perm][my review]]): The book that named
+  TDD. Small and readable. Kent Beck develops a small library for
+  handling currencies in Java, and then a self-testing unit testing
+  harness in Python. The code is condensed, so you don't have to read
+  lines of Java imports. Does a great job of explaining the principles
+  of TDD, which might sound shallow when taken out of context. If you
+  want to get the core idea behind TDD, read this book. Actually, just
+  read this book, it's small and really good.
+
+- Working Effectively with Legacy Software ([[https://www.amazon.com/review/RH3QBC0UTVITO/ref%3Dcm_cr_rdp_perm][my review]]): This book
+  could have been titled "How to introduce tests to a code base, and
+  then change it". The bulk of the book explains techniques on how to
+  break down spaghetti code so that one can write automated tests, and
+  then improve it. Discussions of TDD, OOP design and team psychology
+  intervowen.
+
+- [[http://www.growing-object-oriented-software.com/][Growing object-oriented software guided by tests]]: Still in the
+  process of reading this book.
+
+- Continuous Delivery
+
+** Online texts
+
+- [[http://martinfowler.com/tags/testing.html][Martin Fowler's writings on testing]]. Fowler's Bliki contains many
+  entries on the basics of OOP and congruent topics. The writing is
+  sometimes repetitive and overly simple, but there are many
+  fundamental points. My favorites:
+  + [[http://martinfowler.com/bliki/TestPyramid.html][The test pyramid]] is a short discussion of this valuable scheme. It
+    also contains the really valuable remark that "If you get a
+    failure in a high level test, not just do you have a bug in your
+    functional code, you also have a missing or incorrect unit test."
+  + [[http://martinfowler.com/bliki/UnitTest.html][Unit test]]: Compact discussion of unit tests, which MF defines as
+    low-level, fast tests written by devs. Has many useful links.
+  + [[http://martinfowler.com/articles/mocksArentStubs.html][Mocks aren't stubs]]: A thorough discussion of various kinds of test
+    doubles, i.e. pretend objects used instead of real ones in
+    tests. Also introduces the mockist vs classist testing divide. Not
+    a big fan of mocks, a stance I can definitely agree with.
+
+- [[http://pythontesting.net/strategy/why-most-unit-testing-is-waste/][Why most unit testing is waste]]: One of the best-known criticisms of
+  TDD and unit tests. There is a lot of name-calling and cranky
+  get-of-my-lawning, complete with memories of punch cards, but some
+  valid points, too. Coplien argues that most testing should take
+  place at system or large-scale integration level, because that's
+  where business value is. Unit tests are suitable only when there is
+  an oracle, i.e. an external authority of correctness for an
+  algorithm. Pretty much all other unit testing is waste. Early
+  feedback is bad, because children in Africa don't have it
+  (seriously, this is the argument). Back to the valid
+  points. Coplient points out that your tests don't think for you; you
+  still have to make the right design decisions. Also, crappy test
+  code is worse than no test code, because you have to maintain it, so
+  there is something like negative value from testing.
+
+- [[https://www.youtube.com/watch?v%3DKtHQGs3zFAM][Jim Coplien and Bob Martin Debate on TDD]]: The author of the above
+  paper debates Bob Martin, an ardent TDDer. Martin defines TDD
+  according to [[http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development][the three rules of TDD]], and argues that this is
+  something every professional dev should do now. Coplien's concerns
+  are twofold. First is the claim that you can drive architecture only
+  with TDD. He makes the same argument as in the above paper; this is
+  not possible with objects. Second concern is the UI. Martin says
+  something remarkable: Starting around 1999, there was a feeling in
+  the agile community that architecture is irrelevant, we can build it
+  in iterations through TDD and user stories; this is horseshit. You
+  should do it separately, but still in iterations. Coplien says that
+  you can't do it properly without upfront domain knowledge. He starts
+  a 2 million Loc project with a skin of classes and their
+  connections, spending half an hour. It has to be minimal. Last point
+  of discussion is design by contract. Martin argues that this is
+  parallel to TDD; Coplien says that tests are still code, and
+  contracts are closer to semantics of the code.
+
+- [[http://caminotics.ort.edu.uy/innovaportal/file/2032/1/aimfire.pdf][Aim, Fire]]: Short but surprisingly revealing piece by Kent Beck on
+  TDD. Paints TDD as a design and analysis, not a testing, technique,
+  and gives simple examples of how TDD helps with these two. Key quote
+  on design: "it’s not that design skill goes away — the intensity of
+  the feedback substitutes for the ability to guess right".
+
+- [[https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html][Just say no to more end-to-end-tests]]: Google testing team's opinion
+  on end-to-end tests. According to the author, end-to-end tests are
+  too unreliable and troublesome for the value they offer. Try to
+  write much more unit tests than end-to-end-tests, add some
+  integration tests. The advantage of unit tests: Fast, reliable,
+  isolates failures. Great for fast feedback. The mixture should be
+  like the pyramid mentioned above: 70% - 20% - 10%. Mentions the idea
+  of [[https://testing.googleblog.com/2012/10/hermetic-servers.html][hermetic testing]], where the service under test (SUT) is isoloated
+  with mock external dependencies and in-memory data store. There is
+  [[https://www.symphonious.net/2015/04/30/making-end-to-end-tests-work/][one response]] that makes some valid criticisms, but is weird in
+  admitting pretty much everything in the Google post (long running
+  time, intermittent failures), and does not address the main points.
+
+- [[http://docs.pylonsproject.org/en/latest/community/testing.html][The Pylons project testing guidelines]]: A very direct, concrete guide
+  for unit testing in Python. Goes into detail on the hows and whys of
+  writing good unit tests. Has a good list of arguments against
+  doctests, which I quote regularly.
+
+- [[http://www.agiledata.org/essays/tdd.html][Introduction to Test Driven Development (TDD)]]: Short overview of
+  TDD. Defines TDD as Refactoring + TFD (test-first
+  development). Mentions the idea that if a change is easy to make,
+  write a test and make it; otherwise, refactor to make it easy, then
+  make it, which Beck does not mention in his original book, but makes
+  in [[https://twitter.com/kentbeck/status/250733358307500032][other occasions later]]. Also demonstrates how a simple idea like
+  TDD can and will be made unnecessarily complex to accomodate more of
+  the software development lifecycle.
+
+- [[http://fabiopereira.me/blog/2012/03/18/introducing-depth-of-test-dot/][Introducing Depth of Test (DOT)]]: A blog post that defines the idea
+  of depth of test, which is supposed to be the analog of depth of
+  field in photography. DOT is the distance between the farthest
+  components that are visited in a test. Shallow depth of test leads
+  to better focus and maintainability.
+
+- [[http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article%3D1027&context%3Dcsse_fac][Does test-driven development really improve software design
+  quality?]]: An empirical study of the results of TDD.
+
+- [[https://www.microsoft.com/en-us/research/wp-content/uploads/2009/10/Realizing-Quality-Improvement-Through-Test-Driven-Development-Results-and-Experiences-of-Four-Industrial-Teams-nagappan_tdd.pdf][Realizing quality improvement through test driven development]]:
+  Another empirical study
+
+- [[https://eev.ee/blog/2016/08/22/testing-for-people-who-hate-testing/][Testing, for people who hate testing]]: Common sense and concrete
+  advice on Python unit testing. Agrees on writing very few functional
+  tests due to the common reasons. Admits that it's very difficult to
+  unit test projects that rely heavily on relational DBs. Some strong
+  words on the default Python test harness, which actually has a
+  point.
+
+- As with all important programming terms, there is a confusion as to
+  the meaning of testing. It can mean manual testing, including
+  exploratory stuff, or automated testing. One relatively well-known
+  case of such a confusion is [[http://blog.wilshipley.com/2005/09/unit-testing-is-teh-suck-urr.html][Unit testing is teh suck, Urr]], where the
+  author of a popular Mac OS application argues that you should do a
+  lot of manual testing and no unit testing, because unit tests will
+  not catch the important bugs. [[http://www.satisfice.com/blog/archives/856][Testing and Checking Refined]] tries to
+  remedy this situation by distinguishing between testing and
+  checking. Testing is anything that can be done by humans, and
+  checking is anything that can be algorithmized. Checking is thus a
+  subset of testing, and it can be automatized. Alas, it's difficult
+  to replace every occurence of /unit test/ with /unit check/ by now.
+
+- Robert "Uncle Bob" Martin has written extensively on TDD. Actually,
+  this is one of his favorite topics; I don't know why he hasn't
+  written a book about it.
+
+  + Chapter 9 of his book [[https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882][Clean Code]] has a relatively short chapter on
+    testing that is still a good introduction. It contains discussions
+    of Martin's three laws of TDD, mentioned above, and the five
+    properties of clean tests: fast, independent, repeatable,
+    self-validating and timely (FIRST).
+
+  + Martin has also written many blog posts on unit tests and TDD, and
+    his writing usually forceful and direct. [[https://8thlight.com/blog/uncle-bob/2013/03/05/TheStartUpTrap.html][The Startup Trap]]
+    admonishes founders who shun speed for quality, asking them to
+    keep to clean code practices; some exceptions are clarified in a
+    [[https://8thlight.com/blog/uncle-bob/2013/03/06/ThePragmaticsOfTDD.html][follow-up post]].
+
+  + [[http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html][The Cycles of TDD]] is a very good exposition of the various
+    feedback cycles that TDD involves, and what you should pay
+    attention to in each of these.
+
+  + One piece by Martin I'm particularly fond of, [[http://blog.cleancoder.com/uncle-bob/2016/03/19/GivingUpOnTDD.html][Giving Up on TDD]], is
+    a response to [[http://iansommerville.com/systems-software-and-technology/giving-up-on-test-first-development/][another blog post]] which lists issues with TDD. These
+    are tests failing with every minor change, design and losing sight
+    of the big picture. Martin argues that the issues stem from being
+    a novice in TDD. If your tests break on every change, you've got
+    high coupling. If you are not doing proper design, this is your
+    fault, not TDD's; you should always be thinking about design
+    anyway. Losing the big picture is a symptom of not being fluid in
+    TDD. Once it becomes an automatism, you will have the cognitive
+    resources to do so. This post is great because it answers the most
+    frequently asked questions without detours and distractions.
+
+  + [[https://8thlight.com/blog/uncle-bob/2013/09/23/Test-first.html][Test First]] argues that /test first/ does not only imply temporal
+    priority, but also other kinds. Tests are more important than
+    functional code, should be as clean if not cleaner, and easy to
+    read and modify. This is because there is an asymmetry between
+    functional code and tests: The latter tests the former, but the
+    reverse is not true. Also, you can derive the former from the
+    latter, and the reverse of this is not true either. From these
+    observations, Martin derives the rules from simple tests.
+
+  + [[https://8thlight.com/blog/uncle-bob/2014/05/10/WhenToMock.html][When to Mock]] gives two pieces of concrete advice on mocks. The
+    first is to use them sparingly, and only across architectural
+    boundaries. The second is to write the mocks yourself, and not to
+    rely on a mocking library or framework.
+
+  + [[https://8thlight.com/blog/uncle-bob/2014/05/14/TheLittleMocker.html][The Little Mocker]] is an excellent discussion of various kinds of
+    test doubles. Uncle Bob distinguishes the various kinds of doubles
+    such as mocks, stubs, spies and fakes. These are frequently lumped
+    under the same term, namely mock. The different kinds of doubles
+    are ordered according to which subsumes which, and what degree of
+    coupling they each lead to is also discussed.
+
+- [[https://8thlight.com/blog/steven-degutis/2012/09/25/testing-boundaries.html][Testing boundaries]]: A small but interesting blog post that makes an
+  analogy between testing modules at system boundaries (e.g. ORM) and
+  testing that a door is locked from the outside. You can't lock a
+  door from the inside, and then test whether you can open from the
+  outside. What you can do is to lock while the door is still open, to
+  make sure that you can't open the lock from the outside, and also
+  test that you can't push the door open from the outside while it's
+  closed but not locked.
+
+- [[https://docs.google.com/document/d/1aXs1tpwzPjW9MdsG5dI7clNFyYayFBkcXwRDo-qvbIk/preview][Strong Typing vs. Strong Testing]]: In this archived post, Bruce Eckel
+  puts onto paper what many developers who come from a strongly typed
+  language to a weakly typed one feel: Tests in the latter languages
+  replace many checks the compiler does in the former. Weakly typed
+  languages have a big advantage, though. Using a compiler does not
+  absolve one of the task of writing tests, however. This puts
+  languages like Python in an advantageous position, since you can get
+  going much faster, and receive feedback earlier.
+
+- [[https://www.destroyallsoftware.com/blog/2014/tdd-straw-men-and-rhetoric][TDD, Straw Men, and Rhetoric]]: This is a response by Gary Bernhardt
+  to a blog post by DHH of rails fame, titled [[http://david.heinemeierhansson.com/2014/slow-database-test-fallacy.html][Slow database fallacy]].
+  DHH argues that optimizing for speed in tests by mocking or the
+  database is not necessary anymore, thanks to advances in
+  hardware. He demonstrates this point with numbers from the Basecamp
+  codebase, where the complete test suite runs in minutes, and tests
+  for one model runs in seconds. This is achieved using techniques
+  like transaction rollback or [[https://github.com/rails/spring][application preloaders]]. Bernhardt first
+  criticizes DHH's rhetoric, and then lays out his setup and idea of
+  testing and TDD. His work involves quick feedback with tests that
+  run in a few hundred milliseconds, allowing him to do the easy
+  things very quickly. This can't be achieved without
+  isolation. Another point is that the above mentioned techniques are
+  "band-aids that introduce tremendous complexity". A very interesting
+  point is that TDD and isolation are useful, but you have to know the
+  trade-off, learning which requires first going 100% in. There are
+  also some great questions and answers by the author in the [[https://news.ycombinator.com/item?id%3D7676680][Hacker
+  News discussion]].
+
+- [[http://david.heinemeierhansson.com/2014/test-induced-design-damage.html][Test-induced design damage]]: In this second post critical of the
+  fast, isolated unit tests principle of TDD, DHH picks on a live
+  coding session titled [[https://www.youtube.com/watch?v%3Dtg5RFeSfBM4][Decoupling from Rails]] from 2013 by the late
+  Jim Weirich. Weirich refactors a very simple piece of the standard
+  payroll application to decouple it from Rails. What he ends up with
+  is very similar to what Alistair Cockburn calls the [[http://alistair.cockburn.us/Hexagonal%2Barchitecture][Hexagonal, or
+  alternatively Ports and Adapters Architecture]]. In this architecture,
+  the system communicates with every external entity (clients,
+  storage, notifications) through adapters, on ports. Ports are API
+  interfaces, while adapters enable entity-specific logic
+  (e.g. SQL). In Weirich's case, there is a logical boundary between
+  Rails, which would be an adapter for the HTTP port, and the business
+  logic. The business logic is accessed by wrapping calls to Rails
+  things like active record and redirects in separate objects, and
+  passing them and the controller as context to the business
+  logic. Neither the hexagonal architecture, nor Weirich's
+  refactorings are motivated solely by testing, but the tests are much
+  easier to write, and much faster. DHH uses [[https://gist.github.com/dhh/4849a20d2ba89b34b201][samples from the code
+  written by Weirich]] to argue for the existence of what he calls
+  test-induced design damage, which are changes that hurt clarity to
+  accomodate testing goals such as speed, unit testability, or easier
+  TDD. He argues that controllers and models should be integration
+  tested, and in the case of heavy JS use, there should be
+  browser-based tests too. Bob Martin wrote [[https://8thlight.com/blog/uncle-bob/2014/05/01/Design-Damage.html][a response]] to this post,
+  where he argues that Weirich improved the design of the code, since
+  he decoupled the parts exactly as they should be. Testability is a
+  result of this separation of concerns. He also claims that cases of
+  test-induced design damage are very rare, and that he hasn't seen
+  any.
+
+- [[https://www.infoq.com/news/2009/02/spolsky-vs-uncle-bob/][Spolsky vs Uncle Bob]]: This is a journalistic overview of a
+  discussion that was kicked off by comments by Joel Spolsky in a
+  podcast with Jeff Atwood. Spolsky calls TDD too doctrinaire, and
+  SOLID principles bureucratic. Bob Martin, Kent Beck and others
+  respond. The course of the discussion is similar to others mentioned
+  above, with the addition of links to other interesting resources,
+  especially on software development pedagogics. Two of those I found
+  relevant are [[https://blog.codinghorror.com/the-ferengi-programmer/][a post by Atwood]] in which he conflates rules,
+  principles and many other things, declaring experienced developers
+  too good for things like that, and [[http://blog.dhananjaynene.com/2009/02/an-experienced-programmer-doesnt-use-solid-as-a-checklist-he-internalises-it/][a really good response]] that
+  reminds that many seniors have actually internalised those
+  principles.
+
+- [[http://www.rubypigeon.com/posts/wasting-time-tdd-the-wrong-things/][Wasting Time TDDing The Wrong Things]]: This short post argues for
+  starting with high-level (functional) tests that show you the
+  direction to go first, instead of bottom-up design which can lead to
+  getting lost in auxiliary code.
+
+- [[https://dannorth.net/introducing-bdd/][Introducing BDD]]: This post tells the formation history of
+  Behavior-Driven Development and the central ideas behind it. BDD
+  uses an alternative language to describe the tests (as in Rspec),
+  and aims to define the behavior of a piece of code, instead of the
+  correctness conditions.
+
+- Mock roles, not objects: http://www.jmock.org/oopsla2004.pdf
+
+- http://www.natpryce.com/articles/000807.html
+
+** Videos
+
+- [[https://vimeo.com/15007792][The deep synergy between testability and good design]]: This great
+  talk by the author of Working Effectively with Legacy Software
+  mentioned above gives a compelling elaboration of why and how
+  well-designed code also scores high on testability. He couples
+  empirical observations of how specific testing pain-points match
+  with other specific design problems (e.g. a class that is difficult
+  to set up in a test, and coupling) with a more general point about
+  why there is such a synergy between testing and good design. The
+  empirical points are great illustrations of how listening to tests
+  helps you improve design. Feathers points out that often there is a
+  mental note of the design issue, but we don't listen to it. The pain
+  of testing makes it obvious that the issue is there, and forces us
+  to take it seriously. He is astute enough to observe that
+  testability does not directly lead to good design, i.e. the
+  relationship is not bidirectional; this would count as his response
+  to the test-induced design damage point. He also points out that
+  many people run into testing issues, and blame the tests instead of
+  looking for design errors in their code. The main point of his talk
+  is the reason for the synergy. Good design is good because it
+  follows cognitive principles, such as locality: It's easier to
+  understand code if you don't have to juggle other pieces at the same
+  time. Tests are automated forms of such understanding; if it's easy
+  to understand, it's easy to test.
+
+
+- [[http://martinfowler.com/articles/is-tdd-dead/][Is TDD dead?]]: This series of video chats between DHH, Kent Beck and
+  Martin Fowler is very relevant if you are interested in the future
+  of testing. The starting point is the series of blog posts by DHH
+  linked to above criticizing TDD, and a keynote he gave at RailsCon
+  in the same vein. The discussion revolves mainly around the topic of
+  the trade-offs of TDD, where it is applicable and where not, whether
+  it can lead to design damage, and the pitfalls of taking extreme
+  points.
+
+
+- [[https://vimeo.com/80533536][Integrated tests are a scam]]: Talk by J. B. Rainsberger on the evil
+  of what he calls integrated tests. Unit tests run in memory, don't
+  require a database, web connection or file system state. Integrated
+  tests (ITs) depend on such things and/or the internals of other
+  modules. ITs are a scam because they proliferate due to a positive
+  feedback loop. When a bug is caught in an integrated system, we
+  write an integrated test to make sure it doesn't happen again. But
+  these tests don't deliver feedback on design (which he holds to be
+  the raison d'etre of unit tests). Bad design leads us to write less
+  unit tests, because it's hard to do, so we end up writing more
+  integrated tests. I really like this point, but the solution is a
+  bit simplistic: Write more interface and collaboration tests. In two
+  blog posts, Rainsberger makes some themes a bit clearer. The [[http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam][first
+  one]] is a bit old and heavy on numbers, the [[http://blog.thecodewhisperer.com/permalink/clearing-up-the-integrated-tests-scam][second one]] is
+  well-written and explains the scam thing. If you have little time,
+  read only the second blog post.
+
+- Rich Hickey's well-known talk [[https://www.infoq.com/presentations/Simple-Made-Easy][Simple Made Easy]] contains some wisdom
+  on testing and criticism of TDD. As could be expected Uncle Bob has
+  a response to it titled [[https://8thlight.com/blog/uncle-bob/2011/10/20/Simple-Hickey.html][Simple Hickey]], where he accepts some of the
+  criticisms.
