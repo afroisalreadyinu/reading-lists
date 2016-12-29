@@ -23,8 +23,6 @@ By no means exhaustive.
 - [[http://www.growing-object-oriented-software.com/][Growing object-oriented software guided by tests]]: Still in the
   process of reading this book.
 
-- Continuous Delivery
-
 ** Online texts
 
 - [[http://martinfowler.com/tags/testing.html][Martin Fowler's writings on testing]]. Fowler's Bliki contains many
