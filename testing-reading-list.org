@@ -230,6 +230,20 @@ By no means exhaustive.
   also some great questions and answers by the author in the [[https://news.ycombinator.com/item?id%3D7676680][Hacker
   News discussion]].
 
+- [[https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks][Test Isolation Is About Avoiding Mocks]]: This post by Gary Bernhardt
+  is a defense of mocking against arguments based on nested mocks
+  being evil. His main argument is that nested mocks are pointing at
+  design problems, so you should first fix that, but he has some
+  additional arguments for /isolated testing/ that make this piece
+  well worth reading. Isolation forces you to face the design
+  decisions you made. We all know that long functions are evil, but it
+  is not particularly painful to write them. Isolated testing makes
+  bad design painful, which actually forces us to alleviate (or at
+  least face) it. Also, isolated setup serves as a magnifying glass
+  for design; some things you wouldn't even perceive in normal code,
+  you will see in isolated tests.
+
+
 - [[http://david.heinemeierhansson.com/2014/test-induced-design-damage.html][Test-induced design damage]]: In this second post critical of the
   fast, isolated unit tests principle of TDD, DHH picks on a live
   coding session titled [[https://www.youtube.com/watch?v%3Dtg5RFeSfBM4][Decoupling from Rails]] from 2013 by the late
