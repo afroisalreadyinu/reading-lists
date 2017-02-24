@@ -354,6 +354,12 @@ By no means exhaustive.
   well-written and explains the scam thing. If you have little time,
   read only the second blog post.
 
+- [[https://medium.com/table-xi/in-defense-of-sliming-937b63046efb#.5onu99gqj][In defense of sliming]] makes an argument for sliming, i.e. writing
+  simple code that just returns the result expected in the
+  test. Sliming proves that you already have working code, makes you
+  think functionality decoupled from interface, and gets you in the
+  habit of searching for the simplest solution.
+
 - Rich Hickey's well-known talk [[https://www.infoq.com/presentations/Simple-Made-Easy][Simple Made Easy]] contains some wisdom
   on testing and criticism of TDD. As could be expected Uncle Bob has
   a response to it titled [[https://8thlight.com/blog/uncle-bob/2011/10/20/Simple-Hickey.html][Simple Hickey]], where he accepts some of the
