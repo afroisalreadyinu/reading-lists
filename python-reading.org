@@ -1,0 +1,94 @@
+# Recommended reading for Python developers
+
+Here is a list of recommended Python-related reading and viewing that
+I have found useful over the years, and re-read every now and then:
+
+** Blog posts
+
+- [[http://dirtsimple.org/2004/12/python-is-not-java.html][Python is not Java]]: Oldie but goodie, especially if you're coming
+  from Java. Python has a different model of programming, and you
+  should adapt to it.
+
+- [[http://nedbatchelder.com/text/names.html][Facts and myths about Python names and values]]: A detailed
+  explanation of how names and values work in Python.
+
+- [[https://caremad.io/2013/07/setup-vs-requirement/][setup.py vs. requirements.txt]]: What is the difference, which one
+  should you use for what?
+
+- [[http://blog.miguelgrinberg.com/post/the-package-dependency-blues][The Package Dependency Blues]]: Also on the topic of organizing
+  dependencies.
+
+- [[https://glyph.twistedmatrix.com/2016/08/attrs.html?utm_source%3Dtwitterfeed&utm_medium%3Dtwitter#fnref:2][The One Python Library Everyone Needs]]: Glyph discusses attr.
+
+** Asyncio
+
+- https://docs.python.org/3/library/asyncio.html
+
+- [[https://www.youtube.com/watch?v%3DZzfHjytDceU][David Beazley keynote on Asyncio]]: A very funny and informative talk
+  by Beazley on the history and fundamental idea of asyncio. Asyncio
+  is the result of years of development in solving the problem of
+  reading from and writing to multiple sockets, without having to deal
+  with threads. Beazley live-implements a simple version of the
+  asyncio event loop to make the point that it's an API more than a
+  library.
+
+- [[https://www.youtube.com/watch?v%3Dm28fiN9y_r8][Yury Selivanov - async/await in Python 3.5 and why it is awesome]]:
+  Asyncio for beginners
+
+- [[http://www.snarky.ca/how-the-heck-does-async-await-work-in-python-3-5][How the heck does async/await work in Python 3.5?]]: Async, how does
+  it work?
+
+
+https://hackernoon.com/asyncio-for-the-working-python-developer-5c468e6e2e8e#.x4asgge96
+
+https://pymotw.com/3/asyncio/
+
+https://vorpus.org/blog/some-thoughts-on-asynchronous-api-design-in-a-post-asyncawait-world/
+
+
+## Books
+
+- Fluent Python
+
+## StackOverflow answers etc.
+
+- [[http://stackoverflow.com/questions/101268/hidden-features-of-python][Hidden features of Python]]: The traditional SO thread of hidden
+  features and tricks of a language, for Python.
+
+- [[http://stackoverflow.com/questions/20246523/how-references-to-variables-are-resolved-in-python][How references to variables are resolved in Python]]: In-depth
+  discussion on scope in Python, which is not as simple as it looks.
+
+- [[http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python][What does the yield keyword do in Python?]]:
+  The `yield` keyword can be confusing for newcomers; the answer to
+  this SO question does a great job of explaining it.
+
+- [[http://www.reddit.com/r/Python/comments/32yvjf/experienced_python_users_whats_the_most_recent/][What's the most recent thing you learned about the language?]]: Good
+  collection of hidden treasures, many for Python 3.
+
+
+## Videos
+
+- [[http://pyvideo.org/video/1779/pythons-class-development-toolkit][Python's class development toolkit]]: A great video every Python dev
+  should watch. Explains details of how to do OOP in Python, and how
+  not to do it.
+
+- [[http://www.slideshare.net/r1chardj0n3s/dont-do-this-24000445][Don't do this]]: More on the humorous side, this talk gathers weird
+  things that work which you nevertheless shouldn't do. Gives an idea
+  of all the things you thought wouldn't be possible in Python.
+
+- https://github.com/s16h/py-must-watch
+
+- https://www.youtube.com/watch?v=1ByQhAM5c1I
+
+- [[https://www.youtube.com/watch?v%3D2wDvzy6Hgxg][Type Hints - Guido van Rossum - PyCon 2015]]: A talk in which van
+  Rossum presents the type annotations, but also the typing module
+  which introduces Java-like generics to the language. Good to watch
+  if you want to understand the reasons behind
+
+- [[https://www.youtube.com/watch?v%3Dwf-BqAjZb8M][Raymond Hettinger - Beyond PEP 8 -- Best practices for beautiful
+  intelligible code - PyCon 2015]]: Great talk by Hettinger on going
+  beyond PEP8 for readibility and modularity. There is more to PEP8
+  when it comes to writing good Python. It's not the word of god, and
+  there is not much sense in sticking to it religiously. When you feel
+  the temptation to make your code more unintelligible just to stick
+  to PEP8, you should resist it.
