@@ -360,6 +360,14 @@ By no means exhaustive.
   think functionality decoupled from interface, and gets you in the
   habit of searching for the simplest solution.
 
+- Sarah Mei's blog post [[https://www.devmynd.com/blog/five-factor-testing/][Five factor testing]] argues that the value of
+  software tests can be organized around five dimensions, and these
+  should serve as guiding principles for discussions on how to test
+  and what to test. She also argues that these dimensions are not
+  always in unison. They can work against each other, and it's a
+  talent acquired over the years to be able to judge what is more
+  important in which context.
+
 - Rich Hickey's well-known talk [[https://www.infoq.com/presentations/Simple-Made-Easy][Simple Made Easy]] contains some wisdom
   on testing and criticism of TDD. As could be expected Uncle Bob has
   a response to it titled [[https://8thlight.com/blog/uncle-bob/2011/10/20/Simple-Hickey.html][Simple Hickey]], where he accepts some of the
