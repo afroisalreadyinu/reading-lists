@@ -22,15 +22,14 @@ I have found useful over the years, and re-read every now and then:
 
 ** Asyncio
 
-- https://docs.python.org/3/library/asyncio.html
-
-- [[https://www.youtube.com/watch?v%3DZzfHjytDceU][David Beazley keynote on Asyncio]]: A very funny and informative talk
-  by Beazley on the history and fundamental idea of asyncio. Asyncio
-  is the result of years of development in solving the problem of
-  reading from and writing to multiple sockets, without having to deal
-  with threads. Beazley live-implements a simple version of the
-  asyncio event loop to make the point that it's an API more than a
-  library.
+- [[https://pyvideo.org/python-brasil-2015/keynote-david-beazley-topics-of-interest-python-asyncio.html][David Beazley keynote on Asyncio]]: Entertaining and enlightening talk by David
+  Beazley on the history and fundamental idea of asyncio. Asyncio is the result
+  of years of development in solving the problem of reading from and writing to
+  multiple sockets, without having to deal with threads. Beazley live-implements
+  a simple version of the asyncio event loop to make the point that it's an API
+  more than a library. A more detailed dig into implementing asycnio is the
+  [[https://www.youtube.com/watch?v=Y4Gt3Xjd7G8][Build Your Own Async]] screencast in which Beazley implements an event loop for
+  two alternative models of async, callback-style and await-style.
 
 - [[https://www.youtube.com/watch?v%3Dm28fiN9y_r8][Yury Selivanov - async/await in Python 3.5 and why it is awesome]]:
   Asyncio for beginners
@@ -39,14 +38,7 @@ I have found useful over the years, and re-read every now and then:
   it work?
 
 
-https://hackernoon.com/asyncio-for-the-working-python-developer-5c468e6e2e8e#.x4asgge96
-
-https://pymotw.com/3/asyncio/
-
-https://vorpus.org/blog/some-thoughts-on-asynchronous-api-design-in-a-post-asyncawait-world/
-
-
-## Books
+** Books
 
 - Fluent Python
 
