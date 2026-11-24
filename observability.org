@@ -1,0 +1,16 @@
+* Observability
+
+- [[https://www.brendangregg.com/usemethod.html][The USE Method]]
+
+- The Monitoring 101 series from Datadog is quite good:
+
+  + [[https://www.datadoghq.com/blog/monitoring-101-collecting-data/][Collecting the right data]]: Collect work and resource metrics, mark and tag them properly
+
+  + [[https://www.datadoghq.com/blog/monitoring-101-alerting/][Alerting on what matters]] : Record, notify, page. Page on symptoms, not causes. Page if real,
+    urgent and requires attention.
+
+  + [[https://www.datadoghq.com/blog/monitoring-101-investigation/][Investigating performance issues]]
+
+- [[https://docs.google.com/document/d/199PqyG3UsyXlwieHaqbGiWVa8eMWi8zzAn0YfcApr8Q/edit?pli=1&tab=t.0#heading=h.fs3knmjt7fjy][My Philosophy on Alerting - Google Docs]]
+
+- [[https://sre.google/sre-book/monitoring-distributed-systems/][Google SRE: Monitoring Distributed Systems]]
