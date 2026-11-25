@@ -1,5 +1,7 @@
 * Observability
 
+** Blog posts and articles
+
 - [[https://www.brendangregg.com/usemethod.html][The USE Method]]
 
 - The Monitoring 101 series from Datadog is quite good:
@@ -14,3 +16,9 @@
 - [[https://docs.google.com/document/d/199PqyG3UsyXlwieHaqbGiWVa8eMWi8zzAn0YfcApr8Q/edit?pli=1&tab=t.0#heading=h.fs3knmjt7fjy][My Philosophy on Alerting - Google Docs]]
 
 - [[https://sre.google/sre-book/monitoring-distributed-systems/][Google SRE: Monitoring Distributed Systems]]
+
+- [[https://benjamincongdon.me/blog/2026/10/19/Agentic-Monitoring/][Agentic Monitoring | Ben Congdon]]
+
+** Books
+
+- [[https://www.oreilly.com/library/view/observability-engineering-2nd/9781098179915/][Observability Engineering, 2nd Edition]]
